@@ -197,6 +197,47 @@
             height: 200px;
         }
 
+        .screenshot-thumb {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .screenshot-thumb:hover { opacity: 0.85; }
+
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+        }
+
+        .lightbox-overlay img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            font-family: var(--font-display);
+            line-height: 1;
+        }
+
         .features {
             padding: 5rem 4rem;
             max-width: 1200px;
@@ -468,13 +509,13 @@
 <!-- SCREENSHOTS -->
 <section class="screenshots">
     <div class="screenshot-main">
-        <img src="images/dashboard.png" alt="PostMatch Dashboard">
+        <img src="images/dashboard.png" alt="PostMatch Dashboard" onclick="openLightbox(this.src)" class="screenshot-thumb">
     </div>
     <div class="screenshot-grid">
-        <img src="images/coaching1.png" alt="Coaching Tab - VOD Review">
-        <img src="images/coaching2.png" alt="Coaching Tab - Flags">
-        <img src="images/champions.png" alt="Champions Tab">
-        <img src="images/journal.png" alt="Journal Tab">
+        <img src="images/coaching1.png" alt="Coaching Tab - VOD Review" onclick="openLightbox(this.src)" class="screenshot-thumb">
+        <img src="images/coaching2.png" alt="Coaching Tab - Flags" onclick="openLightbox(this.src)" class="screenshot-thumb">
+        <img src="images/champions.png" alt="Champions Tab" onclick="openLightbox(this.src)" class="screenshot-thumb">
+        <img src="images/journal.png" alt="Journal Tab" onclick="openLightbox(this.src)" class="screenshot-thumb">
     </div>
 </section>
 
@@ -579,6 +620,29 @@
         <a href="privacy.html">Privacy Policy</a>
     </div>
 </footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">✕</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+});
+</script>
 
 </body>
 </html>
