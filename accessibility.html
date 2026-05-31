@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Statement — PostMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0d0f14;
+            --bg-card: #13161e;
+            --accent: #4f8ef7;
+            --text-primary: #e8eaf0;
+            --text-secondary: #9ba3b8;
+            --text-muted: #5a6178;
+            --border: rgba(255,255,255,0.06);
+            --font-display: 'Rajdhani', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --font-body: 'Inter', sans-serif;
+        }
+        body { background: var(--bg); color: var(--text-primary); font-family: var(--font-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.25rem 4rem; border-bottom: 1px solid var(--border);
+            background: rgba(13,15,20,0.95); backdrop-filter: blur(12px);
+        }
+        .logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        main { max-width: 800px; margin: 4rem auto; padding: 0 2rem 6rem; }
+        h1 { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .updated { color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-mono); margin-bottom: 2.5rem; display: block; }
+        h2 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin: 2rem 0 0.75rem; color: var(--text-primary); }
+        p, li { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; margin-bottom: 0.75rem; }
+        ul { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        footer {
+            border-top: 1px solid var(--border); padding: 2rem 4rem;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+        }
+        footer p { color: var(--text-muted); font-size: 0.8rem; }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; }
+        .footer-links a:hover { color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="logo">POST<span>MATCH</span></a>
+</nav>
+
+<main id="main">
+    <h1>Accessibility Statement</h1>
+    <span class="updated">Last updated: May 2026</span>
+
+    <h2>Our Commitment</h2>
+    <p>PostMatch is committed to ensuring digital accessibility for all users. We are continually working to improve the accessibility of both the PostMatch website and the PostMatch desktop application.</p>
+
+    <h2>Website Accessibility</h2>
+    <p>The PostMatch website aims to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA. These guidelines explain how to make web content more accessible to people with disabilities. Conformance with these guidelines helps make the web more user-friendly for everyone.</p>
+    <p>Measures taken on this website include:</p>
+    <ul>
+        <li>Skip navigation link to bypass repeated content</li>
+        <li>Semantic HTML landmarks for screen reader navigation</li>
+        <li>All images include descriptive alternative text</li>
+        <li>Interactive elements are keyboard accessible</li>
+        <li>Focus indicators are visible for keyboard navigation</li>
+        <li>Colour contrast ratios meet WCAG AA standards</li>
+        <li>Respects the <code>prefers-reduced-motion</code> media query</li>
+        <li>ARIA roles and labels applied to interactive components</li>
+    </ul>
+
+    <h2>Desktop Application</h2>
+    <p>The PostMatch desktop application is a Windows application built with a web-based interface. We are working to improve its accessibility and welcome feedback on specific issues encountered.</p>
+
+    <h2>Known Limitations</h2>
+    <p>We are aware of the following limitations and are working to address them:</p>
+    <ul>
+        <li>Some data visualisations in the desktop application do not yet have full screen reader descriptions</li>
+        <li>The desktop application does not currently support high contrast Windows themes</li>
+    </ul>
+
+    <h2>Feedback and Contact</h2>
+    <p>We welcome feedback on the accessibility of PostMatch. If you experience any barriers or have suggestions for improvement, please let us know through our GitHub repository. We aim to respond to accessibility feedback within 5 business days.</p>
+
+    <h2>Technical Specifications</h2>
+    <p>The PostMatch website relies on the following technologies for conformance with WCAG 2.1:</p>
+    <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h2>Assessment Approach</h2>
+    <p>PostMatch assesses accessibility through self-evaluation. We review our content and code against WCAG 2.1 Level AA success criteria during development.</p>
+
+    <h2>Formal Complaints</h2>
+    <p>If you are not satisfied with our response to an accessibility issue, you may contact the relevant enforcement body in your region. In the United Kingdom this is the Equality and Human Rights Commission.</p>
+</main>
+
+<footer role="contentinfo">
+    <a href="index.html" class="logo" style="font-size:1rem;">POST<span>MATCH</span></a>
+    <p>Not endorsed by Riot Games.</p>
+    <div class="footer-links">
+        <a href="accessibility.html">Accessibility</a>
+        <a href="tos.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </div>
+</footer>
+
+</body>
+</html>
