@@ -427,6 +427,148 @@
             color: var(--text-secondary);
         }
 
+        .pricing {
+            padding: 5rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: start;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            transition: border-color var(--transition);
+        }
+
+        .pricing-card:hover { border-color: var(--border-strong); }
+
+        .pricing-card--featured {
+            border-color: var(--accent);
+            background: linear-gradient(180deg, rgba(79,142,247,0.06) 0%, var(--bg-card) 100%);
+        }
+
+        .pricing-card--founding {
+            border-color: rgba(251,191,36,0.3);
+            background: linear-gradient(180deg, rgba(251,191,36,0.04) 0%, var(--bg-card) 100%);
+        }
+
+        .pricing-featured-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-featured-label--founding {
+            color: #fbbf24;
+        }
+
+        .pricing-tier {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .pricing-price {
+            font-family: var(--font-display);
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pricing-cadence {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .pricing-features li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+            margin-top: 0.45rem;
+        }
+
+        .pricing-card--founding .pricing-features li::before {
+            background: #fbbf24;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            display: block;
+        }
+
+        .pricing-btn.disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .pricing-note {
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.03em;
+        }
+
         .cta {
             padding: 6rem 4rem;
             text-align: center;
@@ -493,6 +635,8 @@
             .features, .screenshots, .roles, .cta, .how { padding: 3rem 1.5rem; }
             footer { padding: 1.5rem; flex-direction: column; text-align: center; }
             .footer-links { justify-content: center; }
+            .pricing { padding: 3rem 1.5rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -618,6 +762,76 @@
         <div class="role-badge" role="listitem">ADC</div>
         <div class="role-badge" role="listitem">Support</div>
     </div>
+</section>
+
+<section class="pricing" aria-labelledby="pricing-heading">
+    <h2 id="pricing-heading" class="section-title" style="text-align:center;">Pricing</h2>
+    <p class="pricing-subtitle">PostMatch will have a free tier available at launch, this will allow a certain number of reviews per week without any charge.
+        A premium subscription will also be available for users who want unlimited reviews.
+        There will also be a lifetime premium purchase option for users who would prefer a one-time payment instead of a subscription.
+        My goal is to ensure PostMatch is accessible to as many players as possible while also supporting the development and maintenance of the app.
+        Pricing will be far far below any traditional coaching service, as PostMatch is currently unable to provide feedback as personalized or in-depth as a human coach. 
+        The value of PostMatch is in its ability to make regular review and self-reflection easy and consistent, which is one of the most important factors for improvement.
+        For those who also do not have time to commit to many games a week, the free tier should still provide enough uses to benefit from the app without needing to subscribe.
+    </p>
+
+    <div class="pricing-grid">
+
+        <div class="pricing-card">
+            <div class="pricing-tier">Free</div>
+            <div class="pricing-price">€0</div>
+            <div class="pricing-cadence">always</div>
+            <ul class="pricing-features">
+                <li>3 coaching reviews per week</li>
+                <li>Full match history and stats</li>
+                <li>Champion and matchup tracking</li>
+                <li>LP history graphs</li>
+                <li>Game journal</li>
+                <li>VOD review sync</li>
+            </ul>
+            <a href="#" class="btn-ghost pricing-btn disabled" aria-disabled="true" tabindex="-1">Available at Launch</a>
+        </div>
+
+        <div class="pricing-card pricing-card--featured">
+            <div class="pricing-featured-label">Most Popular</div>
+            <div class="pricing-tier">Premium</div>
+            <div class="pricing-price">€5 <span>/ month</span></div>
+            <div class="pricing-cadence">or €40 per year - save 33%</div>
+            <ul class="pricing-features">
+                <li>Unlimited coaching reviews</li>
+                <li>Full match history and stats</li>
+                <li>Champion and matchup tracking</li>
+                <li>LP history graphs</li>
+                <li>Game journal</li>
+                <li>VOD review sync</li>
+                <li>Early access to new features as they are rolled out</li>
+                <li>Premium badge</li>
+            </ul>
+            <a href="#" class="btn-primary pricing-btn disabled" aria-disabled="true" tabindex="-1">Available at Launch</a>
+        </div>
+
+        <div class="pricing-card pricing-card--founding">
+            <div class="pricing-featured-label pricing-featured-label--founding">Limited - First 6 Months</div>
+            <div class="pricing-tier">Founding Member</div>
+            <div class="pricing-price">€30 <span>one-time</span></div>
+            <div class="pricing-cadence">permanent premium, never pay again</div>
+            <ul class="pricing-features">
+                <li>Unlimited coaching reviews</li>
+                <li>Full match history and stats</li>
+                <li>Champion and matchup tracking</li>
+                <li>LP history graphs</li>
+                <li>Game journal</li>
+                <li>VOD review sync</li>
+                <li>Early access to new features as they are rolled out</li>
+                <li>Founding member badge</li>
+            </ul>
+            <a href="#" class="btn-ghost pricing-btn disabled" aria-disabled="true" tabindex="-1">Available at Launch</a>
+        </div>
+
+    </div>
+
+    <p class="pricing-note">All features available at launch are included in every tier. New features added after launch will be evaluated individually. Pricing may be subject to change</p>
+
 </section>
 
 <section class="cta" aria-labelledby="cta-heading">
